@@ -13,7 +13,7 @@ end
 get '/finish/:key' do
   if params[:key] == ending_key
     cache_long
-    return_json ending_data 
+    return_json ending_data
   else
     halt 406
   end
@@ -84,7 +84,7 @@ helpers do
       :'reference-url' => "/finish/#{settings.ending[:'reference-url']}"
     }
   end
-  
+
   def next_question
     next_question = questions[index(params[:key]) + 1]
   end
@@ -97,7 +97,7 @@ helpers do
     content_type 'application/json'
     data.to_json
   end
-  
+
   def correct_answer?
     answer == user_answer
   end
