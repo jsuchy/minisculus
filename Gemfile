@@ -8,3 +8,7 @@ group :test do
   gem "rack-test"
   gem "rspec-expectations"
 end
+
+group :development do
+  gem "heroku"
+end
