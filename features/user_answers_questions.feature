@@ -11,25 +11,25 @@ Feature: a quiz
     And the quiz has the ending:
       """
       {
-        "key": "mission-complete", 
+        "key": "mission-complete",
         "reference-url": "mission-complete.html",
-        "code": "ABC123", 
+        "code": "ABC123",
         "email": "minisculus@edendevelopment.co.uk"
       }
       """
 
   Scenario: starting the quiz
-    When I GET /start with request headers: 
-      """ 
-      Accept: application/json 
-      """ 
+    When I GET /start with request headers:
+      """
+      Accept: application/json
+      """
     Then the headers should contain:
       """
       Location: /foo
       """
     And the status should be 303
 
-  Scenario: requesting a question 
+  Scenario: requesting a question
     When I GET /foo with request headers:
       """
       Accept: application/json
@@ -92,7 +92,7 @@ Feature: a quiz
       """
     And the status should be 303
 
-  Scenario: requesting another question 
+  Scenario: requesting another question
     When I GET /bar with request headers:
       """
       Accept: application/json
